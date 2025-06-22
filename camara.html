@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoTips - Cámara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom right, #1f1f1f, #2c3e50), url('fondo-estudio.jpg') no-repeat center center fixed;
+      background-blend-mode: overlay;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .pantalla.centrado {
+      background: rgba(207, 198, 198, 0.75); /* gris oscuro translúcido */
+      backdrop-filter: blur(14px) brightness(1.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      max-width: 740px;
+      width: 90%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #f2f2f2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    video {
+      width: 100%;
+      max-width: 680px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .boton {
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 16px;
+      border-radius: 12px;
+      margin: 12px 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .boton:hover {
+      background: linear-gradient(to right, #4ca1af, #2c3e50);
+      transform: scale(1.06);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    canvas {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="pantalla centrado">
+    <h2 id="tituloTarea">Tarea: Cargando...</h2>
+
+    <video id="video" autoplay playsinline></video>
+
+    <br>
+    <button class="boton" onclick="capturar()">📸 Tomar Foto</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <br>
+    <button class="boton" onclick="irAlMenu()">🔙 Volver al Menú</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
